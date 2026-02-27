@@ -3,6 +3,8 @@
 
 A cardiovascular risk score estimator via <br>
 -AHA PREVENT (via the published preventr implementation) <br>
+-ASCVD PCE<br>
+-QRISK3<br>
 -SCORE2 <br>
 -and Framingham 2008 (points-based) <br>
  <br> <br>
