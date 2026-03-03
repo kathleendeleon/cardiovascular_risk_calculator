@@ -812,7 +812,7 @@ def qrisk3_score(row: dict) -> float:
 # Streamlit UI
 # =========================
 st.set_page_config(page_title="CVD Risk Scores", layout="wide")
-st.title("Cardiovascular Risk Disease Scorer")
+st.title("Cardiovascular Disease Risk Scorer")
 st.subheader("PREVENT • SCORE2 • Framingham • ASCVD PCE • QRISK3")
 
 # --- CVD goal & Results Interpretation
