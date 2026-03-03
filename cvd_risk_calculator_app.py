@@ -812,13 +812,14 @@ def qrisk3_score(row: dict) -> float:
 # Streamlit UI
 # =========================
 st.set_page_config(page_title="CVD Risk Scores", layout="wide")
-st.title("CVD Risk Scores — PREVENT • SCORE2 • Framingham • ASCVD PCE • QRISK3")
+st.title("Cardiovascular Risk Disease Scorer")
+st.subheader("PREVENT • SCORE2 • Framingham • ASCVD PCE • QRISK3")
 
 # --- CVD goal & Results Interpretation
 
 st.markdown(
     """
-    The CVD Risk Scores app estimates the probability of experiencing a major cardiovascular event (such as heart attack or stroke) 
+    The Cardiovascular Disease (CVD) Risk Scores app estimates the probability of experiencing a major cardiovascular event (such as heart attack or stroke) 
     over a defined time horizon (typically 10 or 30 years) using established population-based models including PREVENT, SCORE2, 
     Framingham 2008, ASCVD PCE, and QRISK3. Each model applies slightly different assumptions, populations, and statistical methods, 
     which is why results may vary across frameworks.
