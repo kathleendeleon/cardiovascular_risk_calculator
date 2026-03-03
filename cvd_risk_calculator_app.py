@@ -10,13 +10,33 @@ import requests
 import streamlit as st
 import pyreadr
 
+import requests
+import re
+
+def get_latest_preventr_tarball_url():
+    index_url = "https://cran.r-project.org/src/contrib/PACKAGES"
+    resp = requests.get(index_url, timeout=30)
+    resp.raise_for_status()
+
+    packages_text = resp.text
+
+    # Find preventr entry
+    match = re.search(r"Package: preventr\nVersion: ([^\n]+)", packages_text)
+    if not match:
+        raise RuntimeError("Could not find preventr package in CRAN index.")
+
+    version = match.group(1).strip()
+    return f"https://cran.r-project.org/src/contrib/preventr_{version}.tar.gz"
+
 # =========================
 # Constants / conversions
 # =========================
 MGDL_TO_MMOL_CHOL = 0.02586  # mmol/L = mg/dL * 0.02586
 
 # PREVENT coefficients loader (as before)
-CRAN_PREVENTR_TARBALL = "https://cran.r-project.org/src/contrib/preventr_1.1.1.tar.gz"
+# CRAN_PREVENTR_TARBALL = "https://cran.r-project.org/src/contrib/preventr_1.1.1.tar.gz"
+
+CRAN_PREVENTR_TARBALL = get_latest_preventr_tarball_url()
 
 # =========================
 # Helpers
