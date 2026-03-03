@@ -826,7 +826,7 @@ st.markdown(
     """)
 
 # --- Instruction & required data
-label = ":red["Instructions & CSV columns (recommended)]"
+label = ":red[Instructions & CSV columns (recommended)]"
 with st.expander(label):
     url = "https://github.com/kathleendeleon/cardiovascular_risk_calculator/blob/main/cvd_testfile.csv"
     st.write("**Example of required dataset in CSV format** [link](%s)" % url)
