@@ -830,35 +830,31 @@ with st.expander("How to Interpret the Results & Technical Context"):
         """
 - **These are probability estimates, not guarantees.**  
   A 5% 10-year risk means approximately 5 out of 100 similar individuals may experience a cardiovascular event within that timeframe.
-
   
-### < 5% (Low Risk)
+**< 5% (Low Risk)**
 - Generally considered low short-term risk  
 - Emphasis on lifestyle optimization and routine monitoring  
 - Medication typically not indicated unless additional risk factors are present
 
-
-### 5–7.5% (Borderline Risk)
+### 5–7.5% (Borderline Risk)**
 - Risk discussion recommended  
 - Consider additional risk enhancers (family history, biomarkers, etc.)  
 - Preventive medication may be considered depending on clinical context  
 
-
-### 7.5–20% (Intermediate Risk)
+**7.5–20% (Intermediate Risk)**
 - Preventive therapy (e.g., statins) often considered  
 - Further evaluation may be warranted  
 - Stronger emphasis on blood pressure, lipid, and metabolic control
 
-
-### > 20% (High Risk)
+**> 20% (High Risk)**
 - Aggressive risk reduction typically recommended  
 - Medication and closer monitoring usually indicated
-
-
         """
     )
     
-    st.caption(
+    st.divider()
+    
+    st.markdown(
         """
 - **All outputs are population-derived probabilities.**  
   These scores estimate event probability based on cohort-level hazard models, not individualized physiological certainty.
@@ -889,7 +885,6 @@ with st.expander("How to Interpret the Results & Technical Context"):
 
 - **These tools inform prevention strategy—not mortality timing.**  
   They estimate event probability within a horizon, not lifespan prediction.
-
         """
     )
 
