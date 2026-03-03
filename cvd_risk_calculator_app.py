@@ -814,9 +814,95 @@ def qrisk3_score(row: dict) -> float:
 st.set_page_config(page_title="CVD Risk Scores", layout="wide")
 st.title("CVD Risk Scores — PREVENT • SCORE2 • Framingham • ASCVD PCE • QRISK3")
 
-with st.expander("CSV columns (recommended)"):
+# --- CVD goal & Results Interpretation
+
+st.markdown(
+    """
+    The CVD Risk Scores app estimates the probability of experiencing a major cardiovascular event (such as heart attack or stroke) 
+    over a defined time horizon (typically 10 or 30 years) using established population-based models including PREVENT, SCORE2, 
+    Framingham 2008, ASCVD PCE, and QRISK3. Each model applies slightly different assumptions, populations, and statistical methods, 
+    which is why results may vary across frameworks.
+    """)
+
+with st.expander("How to Interpret the Results & Technical Context"):
     st.markdown(
         """
+- **These are probability estimates, not guarantees.**  
+  A 5% 10-year risk means approximately 5 out of 100 similar individuals may experience a cardiovascular event within that timeframe.
+
+  
+### < 5% (Low Risk)
+- Generally considered low short-term risk  
+- Emphasis on lifestyle optimization and routine monitoring  
+- Medication typically not indicated unless additional risk factors are present
+
+
+### 5–7.5% (Borderline Risk)
+- Risk discussion recommended  
+- Consider additional risk enhancers (family history, biomarkers, etc.)  
+- Preventive medication may be considered depending on clinical context  
+
+
+### 7.5–20% (Intermediate Risk)
+- Preventive therapy (e.g., statins) often considered  
+- Further evaluation may be warranted  
+- Stronger emphasis on blood pressure, lipid, and metabolic control
+
+
+### > 20% (High Risk)
+- Aggressive risk reduction typically recommended  
+- Medication and closer monitoring usually indicated
+
+
+        """
+    )
+    
+    st.caption(
+        """
+- **All outputs are population-derived probabilities.**  
+  These scores estimate event probability based on cohort-level hazard models, not individualized physiological certainty.
+
+- **Models differ in calibration and derivation cohorts.**  
+  PREVENT (U.S., contemporary), ASCVD PCE (U.S., 2013-era cohorts), Framingham (older U.S. cohort), SCORE2 (European populations), and QRISK3 (UK primary care) use different baseline survival functions and coefficient structures. Divergence between models often reflects calibration differences, not necessarily “error.”
+
+- **Age dominates short-term risk estimation.**  
+  Most 10-year models are heavily age-weighted; younger individuals often show low short-term risk despite elevated modifiable factors.
+
+- **Risk is nonlinear.**  
+  Many models use log transforms, interaction terms, and nonlinear age effects. Small input changes (e.g., SBP or TC/HDL ratio) can shift outputs non-uniformly depending on baseline values.
+
+- **Threshold categories are policy constructs.**  
+  Cutoffs like 5%, 7.5%, or 20% are guideline-driven decision thresholds—not biological inflection points.
+
+- **Absolute risk ≠ relative risk.**  
+  A low absolute percentage may still represent higher risk relative to a matched low-risk cohort.
+
+- **Model validity depends on population match.**  
+  Applying European (SCORE2) or UK (QRISK3) models to U.S. individuals may reduce calibration accuracy.
+
+- **Uncertainty is not explicitly quantified.**  
+  Most tools output point estimates without confidence intervals. True risk lies within a distribution influenced by measurement variability and model error.
+
+- **Competing risks are simplified.**  
+  Many calculators do not fully model competing non-CVD mortality, especially in younger populations.
+
+- **These tools inform prevention strategy—not mortality timing.**  
+  They estimate event probability within a horizon, not lifespan prediction.
+
+        """
+    )
+
+# --- Instruction & required data
+
+with st.expander("Instructions & CSV columns (recommended)"):
+    st.markdown(
+        """
+Upload a CSV file containing your health metrics (see required column names above), select the appropriate unit settings and model options, and click **Compute Scores**. 
+The app will generate cardiovascular risk estimates across multiple established models. 
+Review the output table to compare results and download the scored CSV if desired. 
+These estimates are intended for educational and exploratory purposes only and should not replace professional medical evaluation or clinical decision-making.
+
+
 **Core (many models):** age, sex, sbp, bp_tx, total_c, hdl_c, smoker, diabetes  
 **PREVENT adds:** bmi, egfr (+ optional statin, hba1c, uacr)  
 **ASCVD PCE adds:** race (optional; Asian will be treated as White/Other)  
