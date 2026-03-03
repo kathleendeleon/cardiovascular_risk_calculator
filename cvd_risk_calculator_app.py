@@ -826,7 +826,7 @@ st.markdown(
     """)
 
 
-    st.divider()
+st.divider()
     
 
 
