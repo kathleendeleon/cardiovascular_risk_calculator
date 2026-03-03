@@ -1043,7 +1043,7 @@ if uploaded is not None:
 with st.expander("How to Interpret the Results & Technical Context"):
     st.markdown(
         """
-- **These are probability estimates, not guarantees.**  
+**These are probability estimates, not guarantees.**  
   A 5% 10-year risk means approximately 5 out of 100 similar individuals may experience a cardiovascular event within that timeframe.
   
 **< 5% (Low Risk)**
@@ -1071,6 +1071,7 @@ with st.expander("How to Interpret the Results & Technical Context"):
     
     st.markdown(
         """
+        
 - **All outputs are population-derived probabilities.**  
   These scores estimate event probability based on cohort-level hazard models, not individualized physiological certainty.
 
