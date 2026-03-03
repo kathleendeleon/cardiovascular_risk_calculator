@@ -826,7 +826,7 @@ st.markdown(
     """)
 
 # --- Instruction & required data
-label = ":green[Instructions & CSV columns (recommended)]"
+label = ":lavender-background[Instructions & CSV columns (recommended)]"
 with st.expander(label):
     url = "https://github.com/kathleendeleon/cardiovascular_risk_calculator/blob/main/cvd_testfile.csv"
     st.write("**Example of required dataset in CSV format** [link](%s)" % url)
@@ -1054,7 +1054,7 @@ st.divider()
 
 # --- Results Interpretation
 
-label2 = ":green[How to Interpret the Results & Technical Context]"
+label2 = ":lavender-background[How to Interpret the Results & Technical Context]"
 with st.expander(label2):
     st.markdown(
         """
