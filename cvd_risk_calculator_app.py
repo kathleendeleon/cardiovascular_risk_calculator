@@ -824,9 +824,6 @@ st.markdown(
     Framingham 2008, ASCVD PCE, and QRISK3. Each model applies slightly different assumptions, populations, and statistical methods, 
     which is why results may vary across frameworks.
     """)
-st.divider()
-    
-
 
 # --- Instruction & required data
 
@@ -864,6 +861,7 @@ These estimates are intended for educational and exploratory purposes only and s
     st.caption(
     "Reminder: SCORE2 is calibrated for European regions; QRISK3 is UK-derived and expects Townsend + SBP variability for best fidelity."
         )
+
 st.divider()
 
 left, right = st.columns([1, 1])
