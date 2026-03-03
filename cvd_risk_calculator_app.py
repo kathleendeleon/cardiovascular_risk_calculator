@@ -834,7 +834,7 @@ st.divider()
 
 with st.expander("Instructions & CSV columns (recommended)"):
     url = "https://github.com/kathleendeleon/cardiovascular_risk_calculator/blob/main/cvd_testfile.csv"
-    st.write("Example of required dataset in CSV format[link](%s)" % url)
+    st.write("Example of required dataset in CSV format [link](%s)" % url)
 
     st.markdown(
         """
