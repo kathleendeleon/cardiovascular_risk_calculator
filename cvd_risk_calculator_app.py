@@ -811,7 +811,7 @@ def qrisk3_score(row: dict) -> float:
 # =========================
 # Streamlit UI
 # =========================
-st.set_page_config(page_title="CVD Risk Scores", layout="wide")
+st.set_page_config(page_title="CVD Risk Scores", layout="centered")
 st.title("Cardiovascular Disease Risk Scorer")
 st.subheader("PREVENT • SCORE2 • Framingham • ASCVD PCE • QRISK3")
 
@@ -852,7 +852,7 @@ These estimates are intended for educational and exploratory purposes only and s
     """
 **CSV Column Definitions**
 
-**Core Demographics
+**Core Demographics**
 - **age** — Age in years  
 - **sex** — Biological sex (`male` or `female`)  
 - **race** — Race category (used for ASCVD PCE calibration; typically `white`, `black`, or `asian/other`)  
