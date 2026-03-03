@@ -867,6 +867,8 @@ These estimates are intended for educational and exploratory purposes only and s
     "Reminder: SCORE2 is calibrated for European regions; QRISK3 is UK-derived and expects Townsend + SBP variability for best fidelity."
         )
 
+st.divider()
+
 left, right = st.columns([1, 1])
 with left:
     chol_units = st.selectbox("Cholesterol units in CSV", ["mg/dL", "mmol/L"], index=0)
@@ -1053,6 +1055,7 @@ if uploaded is not None:
             file_name="risk_scores_output.csv",
             mime="text/csv",
         )
+st.divider()
 
 # --- Results Interpretation
 
