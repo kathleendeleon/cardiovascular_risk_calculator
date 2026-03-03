@@ -896,6 +896,9 @@ with st.expander("How to Interpret the Results & Technical Context"):
 # --- Instruction & required data
 
 with st.expander("Instructions & CSV columns (recommended)"):
+    url = "https://github.com/kathleendeleon/cardiovascular_risk_calculator/blob/main/cvd_testfile.csv"
+    st.write("Example of required dataset in CSV format[link](%s)" % url)
+
     st.markdown(
         """
 Upload a CSV file containing your health metrics (see required column names above), select the appropriate unit settings and model options, and click **Compute Scores**. 
