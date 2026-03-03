@@ -850,6 +850,22 @@ These estimates are intended for educational and exploratory purposes only and s
 **QRISK3 adds (optional but recommended):** townsend, sbp_sd, qrisk_ethnicity (0..9), qrisk_smoke_cat (0..4), fh_cvd, af, migraine, ra, ckd, smi, sle, steroids, atypical_antipsych (+ male-only ed)  
         """
     )
+    
+    st.divider()
+    
+    st.markdown(
+        """
+**QRISK3 Ethnicity (qrisk_ethnicity / ethrisk):**  
+0 White/not stated, 1 White, 2 Indian, 3 Pakistani, 4 Bangladeshi, 5 Other Asian, 6 Black Caribbean, 7 Black African, 8 Chinese, 9 Other
+
+**QRISK3 Smoking (qrisk_smoke_cat / smoke_cat):**  
+0 non-smoker, 1 former, 2 light (1–9/day), 3 moderate (10–19/day), 4 heavy (≥20/day)
+        """
+        )
+
+    st.caption(
+    "Reminder: SCORE2 is calibrated for European regions; QRISK3 is UK-derived and expects Townsend + SBP variability for best fidelity."
+        )
 
 left, right = st.columns([1, 1])
 with left:
@@ -1103,21 +1119,3 @@ with st.expander("How to Interpret the Results & Technical Context"):
   They estimate event probability within a horizon, not lifespan prediction.
         """
     )
-
-
-# --- QRISK3 ethnicity & smoking codes 
-
-with st.expander("QRISK3 ethnicity & smoking codes (for qrisk_ethnicity / qrisk_smoke_cat)"):
-    st.markdown(
-        """
-**Ethnicity (qrisk_ethnicity / ethrisk):**  
-0 White/not stated, 1 White, 2 Indian, 3 Pakistani, 4 Bangladeshi, 5 Other Asian, 6 Black Caribbean, 7 Black African, 8 Chinese, 9 Other
-
-**Smoking (qrisk_smoke_cat / smoke_cat):**  
-0 non-smoker, 1 former, 2 light (1–9/day), 3 moderate (10–19/day), 4 heavy (≥20/day)
-        """
-        )
-
-    st.caption(
-    "Reminder: SCORE2 is calibrated for European regions; QRISK3 is UK-derived and expects Townsend + SBP variability for best fidelity."
-        )
