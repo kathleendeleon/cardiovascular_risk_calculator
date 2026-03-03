@@ -838,7 +838,7 @@ with st.expander("Instructions & CSV columns (recommended)"):
 
     st.markdown(
         """
-Upload a CSV file containing your health metrics (see required column names above), select the appropriate unit settings and model options, and click **Compute Scores**. 
+Upload a CSV file containing your health metrics (see required column names below), select the appropriate unit settings and model options, and click **Compute Scores**. 
 The app will generate cardiovascular risk estimates across multiple established models. 
 Review the output table to compare results and download the scored CSV if desired. 
 These estimates are intended for educational and exploratory purposes only and should not replace professional medical evaluation or clinical decision-making.
